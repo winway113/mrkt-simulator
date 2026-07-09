@@ -25,8 +25,8 @@ export function CartScreen() {
             <p className="mb-2 text-sm text-textMuted">Подарки</p>
             {items.map((nft) => (
               <div key={nft!.id} className="mb-2 flex items-center gap-3 rounded-xl bg-card p-3">
-                <div className="h-12 w-12 shrink-0 overflow-hidden rounded-lg">
-                  <GiftListingVisual nft={nft!} className="h-full w-full" />
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg">
+                  <GiftListingVisual nft={nft!} />
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-semibold">{nft!.giftName}</p>

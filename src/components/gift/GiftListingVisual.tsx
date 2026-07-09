@@ -25,7 +25,7 @@ export function GiftListingVisual({ nft, className = "", size = "card" }: Props)
   );
 
   return (
-    <div className={`relative overflow-hidden ${className || "absolute inset-0"}`}>
+    <div className="relative h-full w-full overflow-hidden">
       <GiftVisual
         giftName={nft.giftName}
         serial={nft.serial}

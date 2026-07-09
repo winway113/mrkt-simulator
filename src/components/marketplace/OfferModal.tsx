@@ -16,8 +16,8 @@ export function OfferModal() {
     <div className="fixed inset-0 z-[60] flex items-end bg-black/70 animate-fade-in" onClick={() => setShowOffer(false)}>
       <div className="w-full animate-slide-up rounded-t-3xl bg-card p-5 pb-10" onClick={(e) => e.stopPropagation()}>
         <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-border" />
-        <div className="mx-auto h-28 w-28 overflow-hidden rounded-2xl">
-          <GiftListingVisual nft={nft} className="h-full w-full" />
+        <div className="relative mx-auto aspect-square h-28 w-28 overflow-hidden rounded-2xl">
+          <GiftListingVisual nft={nft} />
         </div>
         <p className="mt-3 text-center font-bold">{nft.giftName}</p>
         <p className="text-center text-sm text-textMuted">#{nft.serial}</p>

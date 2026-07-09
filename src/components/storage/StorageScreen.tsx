@@ -55,8 +55,8 @@ export function StorageScreen() {
           <div className="grid auto-rows-max grid-cols-2 gap-2">
             {shown.map((nft) => (
               <div key={nft.id} className="overflow-hidden rounded-2xl bg-card">
-                <div className="relative w-full pb-[100%]">
-                  <GiftListingVisual nft={nft} className="absolute inset-0" />
+                <div className="relative aspect-square w-full">
+                  <GiftListingVisual nft={nft} />
                   {nft.listExpiresAt && (
                     <span className="absolute left-1.5 top-1.5 z-20 rounded-md bg-black/60 px-1.5 py-0.5 text-[9px]">
                       {daysLeft(nft.listExpiresAt)}

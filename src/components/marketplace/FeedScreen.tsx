@@ -48,7 +48,6 @@ export function FeedScreen() {
                   backdropName: e.backdropName ?? "Aquamarine",
                   symbolName: e.symbolName ?? ""
                 }}
-                className="h-full w-full"
               />
             </div>
             <div className="min-w-0 flex-1">

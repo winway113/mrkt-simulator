@@ -31,7 +31,7 @@ export function NftDetail() {
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-bg animate-slide-up">
         <div className="relative h-[42vh]">
-          <GiftListingVisual nft={nft} className="h-full w-full" size="detail" />
+          <GiftListingVisual nft={nft} size="detail" />
         <button
           onClick={() => selectNft(undefined)}
           className="absolute left-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-lg backdrop-blur"
