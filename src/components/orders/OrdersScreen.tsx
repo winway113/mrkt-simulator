@@ -1,4 +1,4 @@
-import { originalGiftUrl } from "../../services/giftAssets";
+import { fragmentGiftPreviewUrl } from "../../services/giftAssets";
 import { useMarketStore } from "../../store/marketStore";
 import { AppHeader } from "../layout/AppHeader";
 import { DiamondIcon } from "../layout/DiamondIcon";
@@ -17,7 +17,7 @@ export function OrdersScreen() {
         {buyOrders.map((o) => (
           <div key={o.id} className="mb-2 flex items-center gap-3 rounded-xl bg-card p-3">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-card2">
-              <img src={originalGiftUrl(o.giftName, 128)} alt={o.giftName} className="h-full w-full object-contain" loading="lazy" />
+              <img src={fragmentGiftPreviewUrl(o.giftName)} alt={o.giftName} className="h-full w-full object-cover" loading="lazy" />
             </div>
             <div className="min-w-0 flex-1">
               <p className="font-bold">{o.giftName}</p>
