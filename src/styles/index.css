@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scroll-hide::-webkit-scrollbar { display: none; }
+
+.pattern-dots {
+  background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.btn-yellow {
+  @apply rounded-2xl bg-mrkt-yellow font-bold text-black active:scale-[0.98] transition-transform;
+}
+
+.btn-yellow-sm {
+  @apply rounded-xl bg-mrkt-yellow px-4 py-2 text-sm font-bold text-black;
+}
+
+.btn-dark {
+  @apply rounded-2xl bg-card2 font-semibold text-textPrimary;
+}
+
+.chip-filter {
+  @apply shrink-0 rounded-full bg-card2 px-3 py-1.5 text-xs font-medium text-textMuted;
+}
+
+.chip-filter-active {
+  @apply bg-mrkt-yellow text-black;
+}
+
+.tab-category {
+  @apply shrink-0 pb-2 text-sm font-medium text-textMuted;
+}
+
+.tab-category-active {
+  @apply border-b-2 border-mrkt-yellow text-textPrimary;
+}
+
+.safe-nav {
+  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+}
