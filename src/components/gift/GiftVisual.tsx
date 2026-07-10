@@ -16,7 +16,7 @@ interface Props {
 
 type ImgStage = "fragment" | "fragment-fallback" | "emoji";
 
-export function GiftVisual({ giftName, serial, backdrop, className = "" }: Props) {
+export function GiftVisual({ giftName, serial, backdrop, className = "", size = "card" }: Props) {
   const ensureGift = useCatalogStore((s) => s.ensureGift);
   const [stage, setStage] = useState<ImgStage>("fragment");
 
@@ -41,6 +41,8 @@ export function GiftVisual({ giftName, serial, backdrop, className = "" }: Props
     });
   };
 
+  const imgFit = size === "detail" ? "object-contain" : "object-cover";
+
   return (
     <div
       className={`absolute inset-0 overflow-hidden ${className}`}
@@ -50,7 +52,7 @@ export function GiftVisual({ giftName, serial, backdrop, className = "" }: Props
         <img
           src={src}
           alt={giftName}
-          className="h-full w-full object-cover"
+          className={`h-full w-full ${imgFit}`}
           loading="eager"
           decoding="async"
           onError={onImgError}

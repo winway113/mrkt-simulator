@@ -29,22 +29,28 @@ export function NftDetail() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-bg animate-slide-up">
-        <div className="relative h-[42vh]">
-          <GiftListingVisual nft={nft} size="detail" />
+    <div className="fixed inset-0 z-50 mx-auto flex w-full max-w-[430px] flex-col bg-bg animate-slide-up">
+      <div className="flex shrink-0 items-center gap-3 px-4 py-3">
         <button
           onClick={() => selectNft(undefined)}
-          className="absolute left-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-lg backdrop-blur"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-card text-lg"
         >
           ←
         </button>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-bold">{nft.giftName}</p>
+          <p className="text-xs text-textMuted">#{nft.serial}</p>
+        </div>
+      </div>
+
+      <div className="shrink-0 px-4 pb-3">
+        <div className="relative mx-auto aspect-square w-full max-w-[min(100%,220px)] overflow-hidden rounded-2xl">
+          <GiftListingVisual nft={nft} size="detail" />
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto scroll-hide px-4 pb-32">
-        <h1 className="mt-3 text-xl font-bold">{nft.giftName}</h1>
-        <p className="text-sm text-textMuted">#{nft.serial}</p>
-
-        <div className="mt-4 grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           <Attr label="Модель" value={nft.model} color={backdrop.hex.centerColor} sub={rarityPct(nft.modelRarityPermille)} />
           <Attr label="Символ" value={nft.symbolName} color={backdrop.hex.patternColor} />
           <Attr label="Фон" value={nft.backdropName} color={backdrop.hex.edgeColor} />
